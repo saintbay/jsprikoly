@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+  <label for="username">Введите имя пользователя:</label>
+  <input type="text" id="username" oninput="checkInput(this)">
+  
+  <script>
+    function checkInput(input) {
+      let filteredText = '';
+      for (let char of input.value) {
+        if (!isNaN(char)) { 
+          continue; 
+        }
+        filteredText += char;
+      }
+      input.value = filteredText; 
+    }
+  </script>
+</body>
+</html>
